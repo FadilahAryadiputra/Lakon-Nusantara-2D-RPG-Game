@@ -1,5 +1,5 @@
 # Lakon-Nusantara-2D-RPG-Game
 Project Lakon Nusantara - 2D RPG Game
 
-Controls:
+# Controls:
 Movement -> W,A,S,D

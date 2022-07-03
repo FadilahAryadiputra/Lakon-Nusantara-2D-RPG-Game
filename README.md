@@ -2,5 +2,5 @@
 Project Lakon Nusantara - 2D RPG Game [WIP]
 
 # Controls:
-Movement -> W,A,S,D
-Attack -> Right Click Mouse
+- Movement -> W,A,S,D
+- Attack -> Right Click Mouse

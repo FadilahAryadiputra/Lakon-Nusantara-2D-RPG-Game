@@ -24,7 +24,7 @@ public class Loading : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Jateng");
+            SceneManager.LoadScene("KotaJateng");
         }
         insertLoadingBar.GetComponent<Image>().fillAmount = valueNow / 100;
     }

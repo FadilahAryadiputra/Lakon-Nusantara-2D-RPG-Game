@@ -7,7 +7,12 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame ()
     {
-        SceneManager.LoadScene("Arena");
+        SceneManager.LoadScene("Peta");
+    }
+
+    public void LoadStageJateng()
+    {
+        SceneManager.LoadScene("KotaJateng");
     }
 
     public void QuitGame ()

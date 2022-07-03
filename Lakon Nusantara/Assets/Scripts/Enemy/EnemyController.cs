@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private Animator myAnim;
+    Animator animator;
     private Transform target;
     public Transform homePos;
     [SerializeField]
@@ -14,14 +14,26 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float minRange=0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        myAnim = GetComponent<Animator>();
-        target = FindObjectOfType<PlayerMovement>().transform;
+    public float Health {
+        set {
+            health = value;
+
+            if(health <= 0) {
+                Defeated();
+            }
+        }
+        get {
+            return health;
+        }
     }
 
-    // Update is called once per frame
+    public float health = 1;
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+        target = FindObjectOfType<PlayerController>().transform;
+    }
+
     void Update()
     {
         if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
@@ -36,21 +48,29 @@ public class EnemyController : MonoBehaviour
 
     public void FollowPlayer()
     {
-        myAnim.SetBool("isMoving", true);
-        myAnim.SetFloat("moveX", (target.position.x - transform.position.x));
-        myAnim.SetFloat("moveY", (target.position.y - transform.position.y));
+        animator.SetBool("isMoving", true);
+        animator.SetFloat("moveX", (target.position.x - transform.position.x));
+        animator.SetFloat("moveY", (target.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     public void GoHome()
     {
-        myAnim.SetFloat("moveX", (homePos.position.x - transform.position.x));
-        myAnim.SetFloat("moveY", (homePos.position.y - transform.position.y));
+        animator.SetFloat("moveX", (homePos.position.x - transform.position.x));
+        animator.SetFloat("moveY", (homePos.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, homePos.position) == 0)
         {
-            myAnim.SetBool("isMoving", false);
+            animator.SetBool("isMoving", false);
         }
+    }
+
+    public void Defeated(){
+        animator.SetTrigger("Defeated");
+    }
+
+    public void RemoveEnemy() {
+        Destroy(gameObject);
     }
 }

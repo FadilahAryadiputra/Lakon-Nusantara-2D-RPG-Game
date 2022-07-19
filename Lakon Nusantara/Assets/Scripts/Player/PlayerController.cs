@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
+    //QuestSystem
+    public Quest quest;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -107,5 +110,17 @@ public class PlayerController : MonoBehaviour
 
     public void UnlockMovement() {
         canMove = true;
+    }
+
+    public void GoBattle()
+    {
+        if(quest.isActive)
+        {
+            quest.goal.EnemyKilled();
+            if (quest.goal.IsReached())
+            {
+                quest.Complete();
+            }
+        }
     }
 }

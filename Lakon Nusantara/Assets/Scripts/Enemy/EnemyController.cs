@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float minRange=0f;
 
+    public int currentAmount;
+
     public float Health {
         set {
             health = value;
@@ -68,6 +70,7 @@ public class EnemyController : MonoBehaviour
 
     public void Defeated(){
         animator.SetTrigger("Defeated");
+        currentAmount++;
     }
 
     public void RemoveEnemy() {

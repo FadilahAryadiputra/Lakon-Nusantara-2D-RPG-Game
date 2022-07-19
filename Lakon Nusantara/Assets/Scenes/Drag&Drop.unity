@@ -1240,10 +1240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20974aac029c360448903a2aab8ddf7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txScore: {fileID: 0}
-  txHighScore: {fileID: 0}
+  txScore: {fileID: 1577135878}
+  txHighScore: {fileID: 2118575840}
   Next: {fileID: 1740780617}
-  score: {fileID: 0}
 --- !u!1 &452461426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2645,6 @@ MonoBehaviour:
   txScore: {fileID: 1577135878}
   txHighScore: {fileID: 2118575840}
   Next: {fileID: 1740780617}
-  score: {fileID: 1696573390}
 --- !u!1 &920792757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4889,7 +4887,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' 0'
+  m_Text: 0
 --- !u!222 &1696573389
 CanvasRenderer:
   m_ObjectHideFlags: 0

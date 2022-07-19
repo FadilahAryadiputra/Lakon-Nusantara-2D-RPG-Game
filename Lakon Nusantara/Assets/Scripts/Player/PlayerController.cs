@@ -1,26 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour
 {
+    public HealthBar healthBar;
+    public float Health {
+        set {
+            health = value;
+
+            if(health <= 0) {
+                Defeated();
+            }
+        }
+        get {
+            return health;
+        }
+    }
+    public float health = 100;
+    public float currentHealth;
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public BasicAttack basicAttack;
+    public Quest quest;
+    public QuestTimer questTimer;
+    public Text quesetTimerText;
+    public GameObject objectivesPanel;
+    [Multiline]
+    public Text ObjectivesText;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-    bool canMove = true;
-
-    //QuestSystem
-    public Quest quest;
+    public ParticleSystem dust;
+    public bool canMove = true;
+    public bool defeated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +49,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        currentHealth = health;
+        healthBar.SetMaxHealth((int)health);
     }
 
     private void FixedUpdate() {
@@ -48,6 +71,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isMoving", success);
             } else {
                 animator.SetBool("isMoving", false);
+                dust.Stop();
             }
 
             // Set direction of sprite to movement direction
@@ -57,6 +81,43 @@ public class PlayerController : MonoBehaviour
                 spriteRenderer.flipX = false;
             }
         }
+
+        // Quest Objectives Status
+        if(quest.isActive == true)
+        {
+            objectivesPanel.SetActive(true);
+            ObjectivesText.text = quest.description + "\n" + quest.goal.currentAmount + " / " + quest.goal.requiredAmount;
+        }
+        else
+        {
+            objectivesPanel.SetActive(false);
+        }
+
+        // Quest Timer Status
+        if(questTimer.TimerOn)
+        {
+            if(questTimer.TimeLeft > 0)
+            {
+                questTimer.TimeLeft -= Time.deltaTime;
+                updateTimer(questTimer.TimeLeft);
+            }
+            else
+            {
+                Debug.Log("Time is UP!");
+                questTimer.TimeLeft = 0;
+                questTimer.TimerOn = false;
+            }
+        }
+    }
+
+    void updateTimer(float currentTime)
+    {
+        currentTime += 1;
+
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+
+        quesetTimerText.text = string.Format("Tenggat waktu = " + "{0:00}:{1:00}", minutes, seconds);
     }
 
     private bool TryMove(Vector2 direction) {
@@ -78,11 +139,17 @@ public class PlayerController : MonoBehaviour
             // Can't move if there's no direction to move in
             return false;
         }
-        
     }
 
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
+        if (defeated != true) {
+            dust.Play();
+        }
+        // bool success = TryMove(movementInput);
+        // if(success) {
+        //     dust.Play();
+        // }
     }
 
     void OnFire() {
@@ -101,7 +168,6 @@ public class PlayerController : MonoBehaviour
 
     public void EndBasicAttack() {
         UnlockMovement();
-        basicAttack.StopAttack();
     }
 
     public void LockMovement() {
@@ -109,15 +175,25 @@ public class PlayerController : MonoBehaviour
     }
 
     public void UnlockMovement() {
-        canMove = true;
+        if(defeated != true)
+        {
+            canMove = true;
+        }
     }
 
-    public void GoBattle()
+    public void Defeated() {
+        defeated = true;
+        LockMovement();
+        animator.SetTrigger("Defeated");
+        dust.Stop();
+    }
+
+    public void EnemyKilled()
     {
         if(quest.isActive)
         {
             quest.goal.EnemyKilled();
-            if (quest.goal.IsReached())
+            if(quest.goal.IsReached())
             {
                 quest.Complete();
             }

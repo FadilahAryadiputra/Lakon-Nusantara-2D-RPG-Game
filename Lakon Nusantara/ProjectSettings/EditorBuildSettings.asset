@@ -20,4 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Peta.unity
     guid: 317fc3fc4c121064babedf4991af3665
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/TestingKotaJateng.unity
+    guid: d8087fb89ac14434f87d8e380c899a94
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 3bf2388692b315041884058da75c1806, type: 2}

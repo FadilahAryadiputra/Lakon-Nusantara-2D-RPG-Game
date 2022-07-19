@@ -22011,9 +22011,14 @@ MonoBehaviour:
   dialogueText: {fileID: 994743847}
   dialogue:
   - Apakah Kamu Pak Tua Bill??
-  contButton: {fileID: 446876980}
+  dialougeIndexValue: 0
+  continueButton: {fileID: 0}
+  closeDialougeButton: {fileID: 0}
   wordSpeed: 0.06
   playerIsClose: 0
+  npcQuest: 0
+  npcQuestButton: {fileID: 0}
+  questIndexDialouge: 0
 --- !u!95 &501174553
 Animator:
   serializedVersion: 4
@@ -23531,6 +23536,11 @@ MonoBehaviour:
   target: {fileID: 329792875}
   offset: {x: 0, y: 0, z: 0}
   boundBox: {fileID: 424425}
+  camTransform: {fileID: 0}
+  shakeDuration: 0.2
+  shakeAmount: 5
+  decreaseFactor: 1
+  shakeTrue: 0
 --- !u!1 &949331935
 GameObject:
   m_ObjectHideFlags: 0
@@ -23612,7 +23622,7 @@ SpriteRenderer:
   m_Size: {x: 1.26, y: 0.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &994743845
@@ -23882,12 +23892,12 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000059604645, y: 0.022008363}
+  m_Offset: {x: -0.000000059604645, y: -0.26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.26, y: 0.32}
-    newSize: {x: 1.26, y: 0.32}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -23936,12 +23946,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 202790388, guid: 385dc72a0722ecf41b2858a325a69ee7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385dc72a0722ecf41b2858a325a69ee7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 0.32}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -24877,12 +24887,12 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000059604645, y: 0.022008363}
+  m_Offset: {x: -0.000000059604645, y: -0.26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.26, y: 0.32}
-    newSize: {x: 1.26, y: 0.32}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -24931,12 +24941,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 202790388, guid: 385dc72a0722ecf41b2858a325a69ee7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385dc72a0722ecf41b2858a325a69ee7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 0.32}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -26096,12 +26106,12 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000059604645, y: 0.022008363}
+  m_Offset: {x: -0.000000059604645, y: -0.26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.26, y: 0.32}
-    newSize: {x: 1.26, y: 0.32}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -26150,12 +26160,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 202790388, guid: 385dc72a0722ecf41b2858a325a69ee7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385dc72a0722ecf41b2858a325a69ee7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 0.32}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -26227,7 +26237,7 @@ SpriteRenderer:
   m_Size: {x: 1.26, y: 0.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1796400733
@@ -26326,7 +26336,7 @@ SpriteRenderer:
   m_Size: {x: 1.26, y: 0.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1831043578
@@ -26495,7 +26505,7 @@ SpriteRenderer:
   m_Size: {x: 1.26, y: 0.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1874551751
@@ -26812,12 +26822,12 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000059604645, y: 0.022008363}
+  m_Offset: {x: -0.000000059604645, y: -0.26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.26, y: 0.32}
-    newSize: {x: 1.26, y: 0.32}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -26866,12 +26876,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 202790388, guid: 385dc72a0722ecf41b2858a325a69ee7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385dc72a0722ecf41b2858a325a69ee7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.26, y: 0.32}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

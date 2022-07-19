@@ -9,7 +9,6 @@ public class Hasil : MonoBehaviour
     public Text txHighScore;
     int highscore;
     public GameObject Next;
-    public Score score;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,7 @@ public class Hasil : MonoBehaviour
             PlayerPrefs.SetInt("HS", highscore);
         }
 
-        txScore.text = "Scores: " + score.currentScore;
+        txScore.text = "Scores: " + Data.score;
         txHighScore.text = "Highscores: " + highscore;
         
     }

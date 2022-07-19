@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1230517803148644077}
   - component: {fileID: 2554283751586847852}
   - component: {fileID: 8649812560508921214}
-  - component: {fileID: 5894817098858434236}
   - component: {fileID: 6233127510602555901}
+  - component: {fileID: 7336916003824109739}
   m_Layer: 0
   m_Name: BasicAttackEffectsRight
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 4
   m_Sprite: {fileID: -1666830263, guid: 8e1558037bb36444ca52ef06f32fe21b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -107,40 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!68 &5894817098858434236
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6546943071868064807}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.20521022, y: -0.043789852}
-  - {x: -0.15685357, y: -0.053948727}
-  - {x: -0.0072718766, y: -0.05069807}
-  - {x: 0.099512234, y: 0.009100577}
-  - {x: 0.096863516, y: 0.05015192}
-  - {x: 0.046664305, y: 0.096787214}
-  - {x: 0.1041067, y: 0.09485418}
-  - {x: 0.16433392, y: 0.0698808}
-  - {x: 0.20488057, y: 0.029113783}
-  - {x: 0.20079203, y: -0.0060306024}
-  - {x: 0.15395398, y: -0.06818884}
-  - {x: 0.047364198, y: -0.09616917}
-  - {x: -0.10179447, y: -0.09941678}
-  - {x: -0.20349506, y: -0.047960315}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!114 &6233127510602555901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +120,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  thrustPower: 7
+  knockTime: 0.2
+--- !u!61 &7336916003824109739
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546943071868064807}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.40625, y: 0.203125}
+    newSize: {x: 0.40625, y: 0.203125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.40625, y: 0.203125}
+  m_EdgeRadius: 0

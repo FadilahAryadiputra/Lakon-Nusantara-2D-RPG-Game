@@ -18,10 +18,12 @@ public class BasicAttack : MonoBehaviour
     public void AttackRight() {
         transform.localPosition = rightAttackOffset;
         GameObject hitPoint = Instantiate(hitAreaRight, (Vector2)transform.position - hitAreaRightOffset * transform.localScale.x, Quaternion.identity);
+        AudioManager.instance.hitSFX();
     }
 
     public void AttackLeft() {
         transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
         GameObject hitPoint = Instantiate(hitAreaLeft, (Vector2)transform.position - hitAreaLeftOffset * transform.localScale.x, Quaternion.identity);
+        AudioManager.instance.hitSFX();
     }
 }

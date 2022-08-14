@@ -24,4 +24,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
+
+    // void Update()
+    // {
+    //     if(SceneManager.GetActiveScene().name == "MainMenu")
+    //     {
+    //         AudioManager.instance.GetComponent<AudioSource>().UnPause();
+    //     }
+    // }
 }

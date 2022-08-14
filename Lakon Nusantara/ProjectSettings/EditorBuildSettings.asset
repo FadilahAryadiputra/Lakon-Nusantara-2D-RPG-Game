@@ -44,5 +44,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KotaPapua.unity
     guid: 395e4971deb8d8c498fba4fc200053a6
+  - enabled: 1
+    path: Assets/Scenes/CutScene.unity
+    guid: 2c92cff50b782aa4cb584020f6ec53b7
+  - enabled: 1
+    path: Assets/Scenes/OpenScene.unity
+    guid: 1d511af31ed4db74e9853824b8292c0a
+  - enabled: 1
+    path: Assets/Scenes/CutScenePapua.unity
+    guid: 6062ade2cc2d5644c88bfb80bde9e0cf
+  - enabled: 1
+    path: Assets/Scenes/CutSceneJawa.unity
+    guid: 2d78d9d4676ed8b41898ac1e9d7b4865
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3bf2388692b315041884058da75c1806, type: 2}

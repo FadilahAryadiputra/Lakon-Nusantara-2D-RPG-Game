@@ -11,8 +11,8 @@ public class Hasil : MonoBehaviour
     public GameObject Next;
     public GameObject Button1;
     public GameObject Button2;
-    public GameObject label1;
-    public GameObject label2;
+    // public GameObject label1;
+    // public GameObject label2;
     // Start is called before the first frame update
     void Start()
     {

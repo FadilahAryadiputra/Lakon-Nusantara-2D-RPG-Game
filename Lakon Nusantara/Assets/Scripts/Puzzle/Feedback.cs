@@ -8,7 +8,7 @@ public class Feedback : MonoBehaviour
     // public GameObject mission;
     public GameObject Trivia;
     public GameObject Selesai;
-    // public GameObject puzzle;
+    public GameObject puzzle;
     // public GameObject pos;
     public bool selesai = false;
     public AudioSource win;
@@ -35,7 +35,7 @@ public class Feedback : MonoBehaviour
         }
         if (selesai) 
         {
-            // puzzle.SetActive(false);
+            puzzle.SetActive(false);
             // pos.SetActive(false);
             // mission.SetActive(true);
             win.Play();

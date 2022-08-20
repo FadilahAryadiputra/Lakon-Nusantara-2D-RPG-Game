@@ -534,7 +534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 015d339cafa657f42b25a7c9e036711f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fa9c68f05b8d664d9fcacab954e277f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826773b8ca880b64a94f4903801ec861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgbuttton: {fileID: 0}
 --- !u!1 &775716940
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -126.8, y: -98.6}
+  m_AnchoredPosition: {x: -119.7, y: -155}
   m_SizeDelta: {x: -785, y: -435}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206720719
@@ -1099,6 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826773b8ca880b64a94f4903801ec861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgbuttton: {fileID: 0}
 --- !u!1001 &1483263963
 PrefabInstance:
   m_ObjectHideFlags: 0

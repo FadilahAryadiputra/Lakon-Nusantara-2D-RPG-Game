@@ -7,6 +7,6 @@ public class ActiveScene : MonoBehaviour
 {
    void OnEnable()
    {
-    SceneManager.LoadScene("Peta", LoadSceneMode.Single);
+    SceneManager.LoadScene("OpenScene", LoadSceneMode.Single);
    }
 }

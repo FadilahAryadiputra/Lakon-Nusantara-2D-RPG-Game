@@ -30,8 +30,7 @@ public class Jawab : MonoBehaviour
             gameObject.SetActive(false);
             transform.parent.GetChild (gameObject.transform.GetSiblingIndex () + 1).gameObject.SetActive(true);
         }
-        // gameObject.SetActive(false);
-        // transform.parent.GetChild (gameObject.transform.GetSiblingIndex () + 1).gameObject.SetActive(true);
+        
     }
 
     // Update is called once per frame

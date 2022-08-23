@@ -21,6 +21,12 @@ public class QuestGoal
             currentAmount++;
     }
 
+    public void GroupKilled()
+    {
+        if(goalType == GoalType.GroupKill)
+            currentAmount++;
+    }
+
     public void ItemCollected()
     {
         if(goalType == GoalType.Gathering)
@@ -31,5 +37,6 @@ public class QuestGoal
 public enum GoalType
 {
     Kill,
+    GroupKill,
     Gathering
 }

@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public string sceneToLoad;
+    public string sceneToLoad_1;
+    public string sceneToLoad_2;
+    public string sceneToLoad_3;
     public string restartScene;
 
     void Update()
@@ -14,15 +16,32 @@ public class SceneController : MonoBehaviour
         {
             RestartScene();
         }
+
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            PlayerPrefs.DeleteAll();
+            Debug.Log("PlayerPrefs Deleted!");
+        }
     }
 
-    void LoadScene()
+    public void LoadScene_1()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(sceneToLoad_1);
     }
 
-    void RestartScene()
+    public void LoadScene_2()
+    {
+        SceneManager.LoadScene(sceneToLoad_2);
+    }
+
+    public void LoadScene_3()
+    {
+        SceneManager.LoadScene(sceneToLoad_3);
+    }
+
+    public void RestartScene()
     {
         SceneManager.LoadScene(restartScene);
+        CoinScoreData.score = 0;
     }
 }

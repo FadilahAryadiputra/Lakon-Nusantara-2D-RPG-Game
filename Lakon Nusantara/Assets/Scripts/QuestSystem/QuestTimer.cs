@@ -7,4 +7,5 @@ public class QuestTimer
 {
     public bool TimerOn = false;
     public float TimeLeft;
+    public bool TimeIsUp = false;
 }

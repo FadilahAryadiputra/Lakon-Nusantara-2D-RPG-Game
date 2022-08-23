@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: -2
   m_Sprite: {fileID: 452207339, guid: 5b4ee99a714a64148be5852defcba38a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,10 +99,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0028704777, y: -0.06279738}
+  m_Offset: {x: 0.0028704703, y: -0.061131243}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.39736933, y: 0.3320513}
+  m_Size: {x: 0.39736933, y: 0.35537717}
   m_EdgeRadius: 0
 --- !u!50 &1095138723049024042
 Rigidbody2D:
@@ -123,14 +123,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095138723049024044}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -170,6 +170,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   homePos: {fileID: 0}
+  patrolAI: {fileID: 0}
+  followPlayer: 0
+  goHome: 0
+  goPatrol: 0
   speed: 2
   maxRange: 5
   minRange: 1
@@ -179,10 +183,21 @@ MonoBehaviour:
   damage: 1
   thrustPower: 10
   knockTime: 0.3
+  isKnocked: 0
+  isKnockedTime: 0
+  knockTimer: 0
+  HealthPotionPrefab: {fileID: 925584107606536925, guid: 7ba3828d9190e564db6f0f4676f450f8, type: 3}
+  CoinController: {fileID: 0}
+  coinPrefab: {fileID: 3850698051545920237, guid: a2f4546a6fdf9f54b8968b19c3672152, type: 3}
+  coinSpawnRange: 0
+  minCoinSpawn: 1
+  maxCoinSpawn: 5
   quest:
     isActive: 0
+    completed: 0
     title: 
     description: 
+    questID: 0
     goal:
       goalType: 0
       requiredAmount: 0
@@ -191,6 +206,7 @@ MonoBehaviour:
     goalType: 0
     requiredAmount: 0
     currentAmount: 0
+  HitPlayerSFX: {fileID: 0}
 --- !u!1001 &889421483753241175
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,15 +5,22 @@ using UnityEngine.UI;
 
 public class Skor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        PlayerPrefs.SetInt("Skor",0);
-    }
+    // public static int skor;
+    // // Start is called before the first frame update
+    // void Start()
+    // {
+    //     PlayerPrefs.SetInt("skor",0);
+    // }
 
-    // Update is called once per frame
-    void Update()
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     GetComponent<Text> ().text = PlayerPrefs.GetInt("skor").ToString();
+    // }
+    public int currentScore;
+    void FixedUpdate()
     {
-        GetComponent<Text> ().text = PlayerPrefs.GetInt("Skor").ToString();
+        GetComponent<Text>().text = DataQuiz.skor.ToString("0");
+        currentScore = DataQuiz.skor;
     }
 }

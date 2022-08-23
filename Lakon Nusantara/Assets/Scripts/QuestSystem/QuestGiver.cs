@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuestGiver : MonoBehaviour
 {
@@ -10,19 +11,34 @@ public class QuestGiver : MonoBehaviour
     public QuestTimer questTimer;
     public PlayerController player;
 
+    public GameObject objectivesPanel;
     public GameObject questWindow;
-    public Text titleText;
-    public Text descriptionText;
-    public Text questTimeText;
-    public Text timeStatusText;
+    public TMP_Text titleTMP;
+    public TMP_Text descriptionTMP;
+    public TMP_Text questTimeTMP;
+    public TMP_Text timeStatusTMP;
+    public GameObject notificationPanel;
+    public TMP_Text notificationText;
+
+    void Update()
+    {
+        if(questTimer.TimeIsUp == true)
+        {
+            quest.Failed();
+        }
+    }
 
     public void OpenQuestWindow()
     {
         questWindow.SetActive(true);
-        titleText.text = quest.title;
-        descriptionText.text = quest.description;
-        // TimeLeftText.text = "Tenggat waktu = : " + quest.QuestTimer;
-        questTimeText.text = "Tenggat waktu = : " + questTimer.TimeLeft;
+        titleTMP.text = quest.title;
+        descriptionTMP.text = quest.description;
+        if(questWithTime) {
+            questTimeTMP.text = "Tenggat waktu : " + questTimer.TimeLeft + " detik";
+        }
+        if(questWithTime == false) {
+            questTimeTMP.text = "Tanpa Tenggat Waktu";
+        }
     }
 
     public void CloseQuestWindow()
@@ -32,20 +48,37 @@ public class QuestGiver : MonoBehaviour
 
     public void AcceptQuest()
     {
-        if(questWithTime)
+        if(player.quest.isActive == true)
         {
-            questWindow.SetActive(false);
-            quest.isActive = true;
-            player.quest = quest;
-            player.questTimer = questTimer;
-            timeStatusText.gameObject.SetActive(true);
-            player.questTimer.TimerOn = true;
-        }
-        if(questWithTime == false)
-        {
-            questWindow.SetActive(false);
-            quest.isActive = true;
-            player.quest = quest;
+            notificationPanel.SetActive(true);
+            StartCoroutine(NotificationTime());
+
+            IEnumerator NotificationTime()
+            {
+                yield return new WaitForSeconds(3);
+                notificationPanel.SetActive(false);
+            }
+        } else {
+            if(questWithTime)
+            {
+                questWindow.SetActive(false);
+                quest.isActive = true;
+                player.quest = quest;
+                player.questTimer = questTimer;
+                objectivesPanel.gameObject.SetActive(true);
+                timeStatusTMP.gameObject.SetActive(true);
+                player.questTimer.TimerOn = true;
+            }
+            if(questWithTime == false)
+            {
+                questWindow.SetActive(false);
+                quest.isActive = true;
+                player.quest = quest;
+                player.questTimer = questTimer;
+                objectivesPanel.gameObject.SetActive(true);
+                timeStatusTMP.gameObject.SetActive(false);
+                player.questTimer.TimerOn = false;
+            }
         }
     }
 }

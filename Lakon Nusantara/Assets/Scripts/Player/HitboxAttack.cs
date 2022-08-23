@@ -8,25 +8,17 @@ public class HitboxAttack : MonoBehaviour
     public float thrustPower = 5f;
     public float knockTime = 0.3f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioClip EnemyHitSFX;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Enemy") {
-            // Deal damage to the enemy
-            EnemyController enemy = other.GetComponent<EnemyController>();
+        if (other.gameObject.tag == "Enemy")
+        {
+            EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
 
             if(enemy != null) {
                 enemy.Health -= damage;
+                AudioManager.instance.PlaySFX(EnemyHitSFX);
                 enemy.enemyHealthBar.gameObject.SetActive(true);
                 enemy.enemyHealthBar.SetHealth((int)enemy.Health);
                 enemy.LockMovement();
@@ -35,23 +27,38 @@ public class HitboxAttack : MonoBehaviour
                 Vector2 difference = enemy.transform.position - transform.position;
                 difference = difference.normalized * thrustPower;
                 enemy.rb.AddForce(difference, ForceMode2D.Impulse);
-                StartCoroutine(KnockCo());
+
+                // Start the timer to stop knockback
+                enemy.isKnockedTime = knockTime;
+				enemy.knockTimer = 0f;
+				enemy.isKnocked = true;
             }
-            IEnumerator KnockCo() {
-                if(enemy != null) {
-                    yield return new WaitForSeconds(knockTime);
-                    enemy.rb.velocity = Vector2.zero;
-                    enemy.rb.isKinematic = true;
-                    enemy.rb.velocity = Vector2.zero;
-                    if(enemy.health >= 1) {
-                        enemy.UnlockMovement();
-                    }
-                }
+
+            EnemyMarksmanController enemy2 = other.gameObject.GetComponent<EnemyMarksmanController>();
+            if(enemy2 != null) {
+                enemy2.Health -= damage;
+                enemy2.enemyHealthBar.gameObject.SetActive(true);
+                enemy2.enemyHealthBar.SetHealth((int)enemy2.Health);
+                enemy2.LockAction();
+                enemy2.rb.isKinematic = false;
+                enemy2.rb.gravityScale = 0f;
+                Vector2 difference = enemy2.transform.position - transform.position;
+                difference = difference.normalized * thrustPower;
+                enemy2.rb.AddForce(difference, ForceMode2D.Impulse);
+                
+                // Start the timer to stop knockback
+                enemy2.isKnockedTime = knockTime;
+				enemy2.knockTimer = 0f;
+				enemy2.isKnocked = true;
             }
         }
     }
 
     public void DestroyObject() {
         Destroy(gameObject);
+    }
+
+    public void RemoveEnemyWithParent() {
+        Destroy(transform.parent.gameObject);
     }
 }

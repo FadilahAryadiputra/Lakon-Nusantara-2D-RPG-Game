@@ -521,7 +521,7 @@ TextureImporter:
         x: 81
         y: 177
         width: 30
-        height: 43
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -603,9 +603,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 165
+        y: 176
         width: 48
-        height: 43
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -623,10 +623,10 @@ TextureImporter:
       name: GUI_24
       rect:
         serializedVersion: 2
-        x: 48
-        y: 165
-        width: 31
-        height: 42
+        x: 49
+        y: 177
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -770,10 +770,10 @@ TextureImporter:
       name: GUI_31
       rect:
         serializedVersion: 2
-        x: 138
-        y: 161
-        width: 54
-        height: 30
+        x: 145
+        y: 177
+        width: 46
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2152,6 +2152,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GUI_97
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 258
+        width: 44
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e177f608f838f449466adb26802739
+      internalID: -1000525628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2201,12 +2222,13 @@ TextureImporter:
       GUI_14: -754425752
       GUI_36: 441458345
       GUI_23: 295048746
-      GUI_35: 1713303061
       GUI_66: 859409497
+      GUI_35: 1713303061
       GUI_38: 1050456104
       GUI_96: 2080746270
       GUI_17: 2078866537
       GUI_46: -413880967
+      GUI_97: -1000525628
       GUI_86: 1697510679
       GUI_25: 1328308010
       GUI_84: 1059040512

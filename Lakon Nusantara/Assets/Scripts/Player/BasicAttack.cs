@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class BasicAttack : MonoBehaviour
 {
-    Vector2 rightAttackOffset;
+    public PlayerController player;
+    public AttackOffsetController attackOffset;
 
-    public GameObject hitAreaRight;
-    public Vector2 hitAreaRightOffset;
-    public GameObject hitAreaLeft;
-    public Vector2 hitAreaLeftOffset;
+    public void PlayBasicAttack() {
+        player.LockMovement();
+        player.currentStamina = player.currentStamina - player.basicAttackStaminaUsage;
+        AudioManager.instance.PlaySFX(player.BasicAttackSFX);
 
-    private void Start() {
-        rightAttackOffset = transform.position;
+        if(player.spriteRenderer.flipX == true){
+            attackOffset.AttackLeft();
+        } else {
+            attackOffset.AttackRight();
+        }
     }
 
-    public void AttackRight() {
-        transform.localPosition = rightAttackOffset;
-        GameObject hitPoint = Instantiate(hitAreaRight, (Vector2)transform.position - hitAreaRightOffset * transform.localScale.x, Quaternion.identity);
-    }
-
-    public void AttackLeft() {
-        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
-        GameObject hitPoint = Instantiate(hitAreaLeft, (Vector2)transform.position - hitAreaLeftOffset * transform.localScale.x, Quaternion.identity);
+    public void EndBasicAttack() {
+        player.UnlockMovement();
     }
 }

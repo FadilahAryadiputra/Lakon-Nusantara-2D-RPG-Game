@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Feedback : MonoBehaviour
 {
-    public GameObject mission;
+    // public GameObject mission;
     public GameObject Trivia;
-    bool selesai = false;
+    public GameObject Selesai;
+    public GameObject puzzle;
+    // public GameObject pos;
+    public bool selesai = false;
     public AudioSource win;
+
+    // public MainMenu papua;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +35,13 @@ public class Feedback : MonoBehaviour
         }
         if (selesai) 
         {
-            mission.SetActive(true);
+            puzzle.SetActive(false);
+            // pos.SetActive(false);
+            // mission.SetActive(true);
             win.Play();
             Trivia.SetActive(true);
+            Selesai.SetActive(true);
+            // papua.btnPapua.SetActive(true);
         }
     }
 

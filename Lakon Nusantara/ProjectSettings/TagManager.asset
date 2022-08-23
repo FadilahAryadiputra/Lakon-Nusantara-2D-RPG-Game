@@ -7,6 +7,11 @@ TagManager:
   - PortJateng
   - Enemy
   - Item
+  - Coin
+  - Mandau
+  - Lamin
+  - Giring
+  - Soto
   layers:
   - Default
   - TransparentFX
@@ -14,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Minimap
+  - Obstacle
   - 
   - 
   - 

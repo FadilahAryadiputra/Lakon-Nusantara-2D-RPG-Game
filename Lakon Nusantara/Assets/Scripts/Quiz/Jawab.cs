@@ -17,8 +17,9 @@ public class Jawab : MonoBehaviour
     {
         if(jawab)
         {
-            int Skor = PlayerPrefs.GetInt("Skor") + 10;
-            PlayerPrefs.SetInt("Skor", Skor);
+            // int Skor = PlayerPrefs.GetInt("skor") + 10;
+            // PlayerPrefs.SetInt("skor", Skor);
+            DataQuiz.skor += 10;
             benar.Play();
             gameObject.SetActive(false);
             transform.parent.GetChild (gameObject.transform.GetSiblingIndex () + 1).gameObject.SetActive(true);
@@ -26,9 +27,10 @@ public class Jawab : MonoBehaviour
         else
         {
             salah.Play();
+            gameObject.SetActive(false);
+            transform.parent.GetChild (gameObject.transform.GetSiblingIndex () + 1).gameObject.SetActive(true);
         }
-        // gameObject.SetActive(false);
-        // transform.parent.GetChild (gameObject.transform.GetSiblingIndex () + 1).gameObject.SetActive(true);
+        
     }
 
     // Update is called once per frame

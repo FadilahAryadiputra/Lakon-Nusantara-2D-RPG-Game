@@ -10,6 +10,11 @@ public class EnemyHealthBar : MonoBehaviour
 	public Image fill;
     public Vector3 Offset;
 
+	void Update()
+    {
+        slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
+    }
+
 	public void SetMaxHealth(int health)
 	{
 		slider.maxValue = health;
@@ -24,9 +29,4 @@ public class EnemyHealthBar : MonoBehaviour
 
 		fill.color = gradient.Evaluate(slider.normalizedValue);
 	}
-
-    void Update()
-    {
-        slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
-    }
 }

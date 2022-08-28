@@ -6,8 +6,7 @@ using UnityEngine.Playables;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField]
-    private string sceneToLoad;
+    public FadeTransition fadeTransition;
 
     [SerializeField]
     private PlayableDirector introCutscene;
@@ -17,10 +16,10 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        fadeTransition.GoFadeScene01();
     }
 
-    public void SkipIntroJawa()
+    public void SkipIntro()
     {
         introCutscene.time = introSkipTime;
     }

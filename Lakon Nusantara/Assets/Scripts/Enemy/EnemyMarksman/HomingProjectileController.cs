@@ -51,7 +51,7 @@ public class HomingProjectileController : MonoBehaviour {
 			if(player) {
 				Instantiate(HitParticlePrefab,transform.position, Quaternion.identity);
                 camera.ShakeCamera();
-                player.currentHealth -= damage;
+                player.TakeDamage(damage);
                 // AudioManager.instance.PlaySFX(HitPlayerSFX);
                 player.LockMovement();
                 player.rb.isKinematic = false;

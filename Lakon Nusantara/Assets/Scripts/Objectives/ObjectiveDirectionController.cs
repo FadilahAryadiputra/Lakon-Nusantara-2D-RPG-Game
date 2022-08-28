@@ -18,6 +18,7 @@ public class ObjectiveDirectionController : MonoBehaviour
     public Transform objectives01Pos;
     public Transform objectives01GoalPos;
     public Transform objectives02Pos;
+    public Transform objectives02GoalPos;
     public Transform objectives03Pos;
 
     private void Start()
@@ -67,6 +68,10 @@ public class ObjectiveDirectionController : MonoBehaviour
     }
     public void GoToObjective02Pos() {
         targetDestination.position = objectives02Pos.position;
+        StartPathfinding();
+    }
+    public void GoToObjective02GoalPos() {
+        targetDestination.position = objectives02GoalPos.position;
         StartPathfinding();
     }
     public void GoToObjective03Pos() {

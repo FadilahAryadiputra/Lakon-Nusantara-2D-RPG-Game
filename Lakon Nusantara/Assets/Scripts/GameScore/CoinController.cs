@@ -54,7 +54,9 @@ public class CoinController : MonoBehaviour
         animator.SetBool("isMoving", true);
         animator.SetFloat("moveX", (target.position.x - transform.position.x));
         animator.SetFloat("moveY", (target.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        PlayerController player = FindObjectOfType<PlayerController>();
+        Vector3 targetPos = target.transform.position + player.playerSpriteOffset;
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

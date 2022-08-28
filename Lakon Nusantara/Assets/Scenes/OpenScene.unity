@@ -240,8 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ca85bd737c6784f87f857fe3b44bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuBGM: {fileID: 8300000, guid: ee6d624e0718035449ebee1078ef1ef5, type: 3}
-  jatengBGM: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: ee6d624e0718035449ebee1078ef1ef5, type: 3}
 --- !u!1 &999752485
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d886e2941d277e849af71e13c2a61181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeTransition: {fileID: 1756649919}
 --- !u!4 &1730870720
 Transform:
   m_ObjectHideFlags: 0
@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 1756649918}
   - component: {fileID: 1756649917}
   - component: {fileID: 1756649916}
+  - component: {fileID: 1756649919}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -543,6 +544,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1756649919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756649915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c36912aa0aa4c4408d72ddfc67b54c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad01: MainMenu
+  sceneToLoad02: 
+  sceneToLoad03: 
+  restartScene: 
+  transitionSpeed: 4
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1827462556
 GameObject:
   m_ObjectHideFlags: 0

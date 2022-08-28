@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
+    public FadeTransition fadeTransition;
     public Transform insertLoadingBar;
-    public string sceneToLoad;
 
     [SerializeField]
     private float valueNow;
@@ -26,7 +26,7 @@ public class Loading : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(sceneToLoad);
+            fadeTransition.GoFadeScene01();
         }
         insertLoadingBar.GetComponent<Image>().fillAmount = valueNow / 100;
     }

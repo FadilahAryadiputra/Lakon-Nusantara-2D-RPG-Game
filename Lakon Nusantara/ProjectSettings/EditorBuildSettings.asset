@@ -6,17 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/CutScene.unity
+    guid: 2c92cff50b782aa4cb584020f6ec53b7
+  - enabled: 1
     path: Assets/Scenes/OpenScene.unity
     guid: 1d511af31ed4db74e9853824b8292c0a
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: d7878090d523317488dd8c1ff5d7bb50
   - enabled: 1
-    path: Assets/Scenes/SplashJateng.unity
-    guid: 46f6d8e58443b43498889bd397b64879
-  - enabled: 1
     path: Assets/Scenes/Peta.unity
     guid: 317fc3fc4c121064babedf4991af3665
+  - enabled: 1
+    path: Assets/Scenes/SplashJateng.unity
+    guid: 46f6d8e58443b43498889bd397b64879
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -45,8 +48,20 @@ EditorBuildSettings:
     path: Assets/Scenes/CutSceneJawa.unity
     guid: 2d78d9d4676ed8b41898ac1e9d7b4865
   - enabled: 1
+    path: Assets/Scenes/SplashPapua.unity
+    guid: be58804602f7b124298a64fbd9ba11a9
+  - enabled: 1
+    path: Assets/Scenes/CutscenePapuaIntro.unity
+    guid: 4ee0e6b587b48c8468014c99e5c31585
+  - enabled: 1
+    path: Assets/Scenes/KotaPapua.unity
+    guid: 2653e8ed1322af249a0d0b2c3c8e165c
+  - enabled: 1
     path: Assets/Scenes/Quiz.unity
     guid: 813aa82d6e2c8fe49a3d13e84962a800
+  - enabled: 1
+    path: Assets/Scenes/GOQuiz.unity
+    guid: 9a9cb130c014a244088dda551f25fdef
   - enabled: 1
     path: Assets/Scenes/CutScenePapua.unity
     guid: 6062ade2cc2d5644c88bfb80bde9e0cf

@@ -233,6 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3913190500562384260}
   - component: {fileID: 38973926018945653}
+  - component: {fileID: 5552721461375186326}
   m_Layer: 0
   m_Name: Sign_Pivot
   m_TagString: Untagged
@@ -276,3 +277,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &5552721461375186326
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589802113465448988}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0

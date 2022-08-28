@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6837c6c909a6c940baf4d4f07f4bb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeTransition: {fileID: 566199340}
   insertLoadingBar: {fileID: 1547511019}
   sceneToLoad: CutsceneJatengIntro
   valueNow: 0
@@ -365,6 +366,7 @@ GameObject:
   - component: {fileID: 566199339}
   - component: {fileID: 566199338}
   - component: {fileID: 566199337}
+  - component: {fileID: 566199340}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -438,6 +440,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &566199340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566199336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c36912aa0aa4c4408d72ddfc67b54c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad01: CutsceneJatengIntro
+  sceneToLoad02: 
+  sceneToLoad03: 
+  transitionSpeed: 1
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1338369504
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +622,7 @@ GameObject:
   - component: {fileID: 1748554015}
   - component: {fileID: 1748554017}
   - component: {fileID: 1748554016}
+  - component: {fileID: 1748554018}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -652,10 +672,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 787a40735e0c3454383e357cf08a65e5, type: 3}
-    m_FontSize: 14
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 7
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -673,6 +693,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748554014}
   m_CullTransparentMesh: 1
+--- !u!95 &1748554018
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748554014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e9a5d6b51de90c48866a5d96e8790b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2028877349
 GameObject:
   m_ObjectHideFlags: 0

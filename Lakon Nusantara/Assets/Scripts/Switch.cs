@@ -16,6 +16,8 @@ public class Switch : MonoBehaviour
     public GameObject EnemyNight;
     public GameObject PlayerDay;
     public GameObject PlayerNight;
+    public GameObject PlayerPapuaDay;
+    public GameObject PlayerPapuaNight;
     public GameObject NecroGuyNight;
     public GameObject NecroGuyDay;
     int index;
@@ -39,6 +41,8 @@ public class Switch : MonoBehaviour
             EnemyNight.SetActive(false);
             PlayerDay.SetActive(true);
             PlayerNight.SetActive(false);
+            PlayerPapuaDay.SetActive(true);
+            PlayerPapuaNight.SetActive(false);
             NecroGuyNight.SetActive(false);
         }
         if(index == 0)
@@ -52,6 +56,8 @@ public class Switch : MonoBehaviour
             EnemyNight.SetActive(true);
             PlayerDay.SetActive(false);
             PlayerNight.SetActive(true);
+            PlayerPapuaDay.SetActive(false);
+            PlayerPapuaNight.SetActive(true);
             NecroGuyNight.SetActive(true);
         }
     }

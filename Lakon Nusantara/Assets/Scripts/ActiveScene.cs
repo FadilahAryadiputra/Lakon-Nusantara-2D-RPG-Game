@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class ActiveScene : MonoBehaviour
 {
    public MoveToNextLevel moveToNextLevel;
+   public FadeTransition fadeTransition;
 
    void OnEnable()
    {
       moveToNextLevel.WinUnlockLevel();
-      SceneManager.LoadScene("Peta");
+      fadeTransition.GoFadeScene01();
       AudioManager audioManager = FindObjectOfType<AudioManager>();
       AudioManager.instance.PlayMusic(audioManager.menuBGM);
    }

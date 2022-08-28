@@ -7,6 +7,7 @@ public class PathfindingManager : MonoBehaviour
 {
     PlayerController player;
     public AIPath AIPath;
+    public float stopFXOnRemainDistance = 1f;
 
     public Vector3 findpathVelocityMonitor;
 
@@ -29,7 +30,7 @@ public class PathfindingManager : MonoBehaviour
                 player.spriteRenderer.flipX = false;
             }
 
-            if(AIPath.remainingDistance <= 1)
+            if(AIPath.remainingDistance <= stopFXOnRemainDistance)
             {
                 player.dustParticle.Stop();
                 AudioManager.instance.StopSFXLoop(player.PlayerWalkSFX);

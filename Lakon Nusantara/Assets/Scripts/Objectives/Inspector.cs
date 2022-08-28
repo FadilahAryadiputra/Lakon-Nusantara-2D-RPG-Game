@@ -9,6 +9,7 @@ public class Inspector : MonoBehaviour
     GameObject child;
     public GameObject inspectPanel;
     public GameObject inspectButton;
+    public bool mustUnlockWithQuest = true;
     public int unlockInspectQuestID;
     public int warningMarkChildIndex;
     public bool canBeInspected;
@@ -27,12 +28,16 @@ public class Inspector : MonoBehaviour
             Inspected();
         }
 
-        if(player.questAchievement.questIndex[unlockInspectQuestID] == true)
+        if(mustUnlockWithQuest)
         {
-            canBeInspected = true;
-        } else {
-            canBeInspected = false;
+            if(player.questAchievement.questIndex[unlockInspectQuestID] == true)
+            {
+                canBeInspected = true;
+            } else {
+                canBeInspected = false;
+            }
         }
+        
         if(canBeInspected)
         {
             child.gameObject.SetActive(true);

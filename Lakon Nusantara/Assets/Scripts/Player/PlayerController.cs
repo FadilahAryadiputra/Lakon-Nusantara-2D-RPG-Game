@@ -323,27 +323,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float damage) {
+        currentHealth -= damage;
+        if(currentHealth <= 0) {
+            animator.SetTrigger("Defeated");
+            AudioManager.instance.PlaySFX(PlayerDefeatedSFX);
+            AudioManager.instance.PlaySFX(GameOverSFX);
+            if(gameOverPanel) {
+                gameOverPanel.SetActive(true);
+            }
+            if(gameOverDialogue) {
+                StartCoroutine(GameOverDialogue());
+
+                IEnumerator GameOverDialogue() {
+                    yield return new WaitForSeconds(3);
+                    gameOverDialogue.SetActive(true);
+                }
+            }
+        }
+    }
+
     public void Defeated() {
         defeated = true;
         this.GetComponent<BoxCollider2D>().enabled = false;
         LockMovement();
-        animator.SetTrigger("Defeated");
         currentStamina = 0;
         dustParticle.Stop();
-        AudioManager.instance.PlaySFX(PlayerDefeatedSFX);
-        AudioManager.instance.PlaySFX(GameOverSFX);
         AudioManager.instance.StopSFXLoop(PlayerWalkSFX);
-        if(gameOverPanel) {
-            gameOverPanel.SetActive(true);
-        }
-        if(gameOverDialogue) {
-            StartCoroutine(GameOverDialogue());
-
-            IEnumerator GameOverDialogue() {
-                yield return new WaitForSeconds(3);
-                gameOverDialogue.SetActive(true);
-            }
-        }
     }
 
     public void EnemyKilled()

@@ -283,7 +283,11 @@ public class EnemyMarksmanController : MonoBehaviour
         player.EnemyKilled();
 
         respawner = GameObject.Find(gameObject.name + (" spawn point"));
-        respawner.GetComponent<EnemyRespawn>().Death = true;
+        if(respawner) {
+            respawner.GetComponent<EnemyRespawn>().Death = true;
+        } else {
+            Debug.Log("There is no respawner for this enemy [" + gameObject.name + "]!");
+        }
     }
 
     public void RemoveEnemy() {

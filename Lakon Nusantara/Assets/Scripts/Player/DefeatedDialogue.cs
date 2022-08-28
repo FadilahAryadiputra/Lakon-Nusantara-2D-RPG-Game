@@ -66,8 +66,12 @@ public class DefeatedDialogue : MonoBehaviour
 
     public void NextLine()
     {
-        restartButton.SetActive(false);
-        mainMenuButton.SetActive(false);
+        if(restartButton) {
+            restartButton.SetActive(false);
+        }
+        if(mainMenuButton) {
+            mainMenuButton.SetActive(false);
+        }
 
         if(index < dialogue.Length - 1)
         {

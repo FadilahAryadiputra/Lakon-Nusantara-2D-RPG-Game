@@ -111,7 +111,7 @@ MonoBehaviour:
   isKnocked: 0
   isKnockedTime: 0
   knockTimer: 0
-  moveSpeed: 2
+  moveSpeed: 1.8
   stoppingDistance: 5
   retreatDistance: 4
   maxViewDistance: 8

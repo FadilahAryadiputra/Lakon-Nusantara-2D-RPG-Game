@@ -28,7 +28,7 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
 
     // -- Scene Level || Open Objectives Panel --
-    public void OpenObjectivesPanel(){
+    public void OpenObjectivesPanel() {
         if(ObjectivesPanel)
         {
             if (ObjectivesPanel.gameObject.activeInHierarchy == false) {
@@ -39,8 +39,7 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExi
         }
     }
 
-    public void PlayHitButtonSFX()
-    {
+    public void PlayHitButtonSFX() {
         AudioManager audioManager = FindObjectOfType<AudioManager>();
         AudioManager.instance.PlaySFX(audioManager.hitButtonSFX);
     }
@@ -50,14 +49,17 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExi
         AudioManager.instance.StopMusic(audioManager.menuBGM);
     }
 
-    public void DeleteSaveData()
-    {
+    public void ResetCoinScoreData() {
+        CoinScoreData.score = 0;
+        Debug.Log("Your coin score data has been reset to 0");
+    }
+
+    public void DeleteSaveData() {
         PlayerPrefs.DeleteAll();
         Debug.Log("PlayerPrefs Deleted!");
     }
 
-    public void QuitGame()
-    {
+    public void QuitGame() {
         Debug.Log ("QUIT!");
         Application.Quit();
     }

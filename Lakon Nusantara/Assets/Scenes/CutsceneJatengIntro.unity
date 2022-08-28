@@ -45379,7 +45379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e524c2894906b514681ba1457dd0a1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: KotaJateng
+  fadeTransition: {fileID: 1994364094}
   introCutscene: {fileID: 1799666429}
   introSkipTime: 86
 --- !u!4 &904206431
@@ -103527,9 +103527,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1994364095}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: PlayHitButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 904206430}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: SkipIntroJawa
+        m_MethodName: SkipIntro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -103970,8 +103982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ca85bd737c6784f87f857fe3b44bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuBGM: {fileID: 0}
-  jatengBGM: {fileID: 8300000, guid: 773a084d5a4683d45abe0d5a5c3bed77, type: 3}
+  musicClip: {fileID: 8300000, guid: 773a084d5a4683d45abe0d5a5c3bed77, type: 3}
 --- !u!1 &1894248884
 GameObject:
   m_ObjectHideFlags: 0
@@ -107012,6 +107023,8 @@ GameObject:
   - component: {fileID: 1994364089}
   - component: {fileID: 1994364093}
   - component: {fileID: 1994364092}
+  - component: {fileID: 1994364094}
+  - component: {fileID: 1994364095}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -107122,6 +107135,38 @@ PlayableDirector:
   m_SceneBindings: []
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1994364094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994364088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c36912aa0aa4c4408d72ddfc67b54c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad01: KotaJateng
+  sceneToLoad02: 
+  sceneToLoad03: 
+  restartScene: 
+  transitionSpeed: 1
+  loadToColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1994364095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994364088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fa11918c5c77a49b7b13725bb1dd09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaDescPanel: {fileID: 0}
+  ObjectivesPanel: {fileID: 0}
 --- !u!1001 &1994554003
 PrefabInstance:
   m_ObjectHideFlags: 0

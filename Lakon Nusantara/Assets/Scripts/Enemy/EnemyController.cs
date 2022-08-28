@@ -165,7 +165,7 @@ public class EnemyController : MonoBehaviour
 
             if(player != null) {
                 camera.ShakeCamera();
-                player.currentHealth -= damage;
+                player.TakeDamage(damage);
                 AudioManager.instance.PlaySFX(HitPlayerSFX);
                 // player.healthBar.SetHealth((int)player.currentHealth);
                 player.LockMovement();
@@ -224,7 +224,7 @@ public class EnemyController : MonoBehaviour
         if(HealthPotionPrefab)
         {
             // Randomly dropping HealthPotion
-            if(Random.value > 0.80) //%20 percent chance (1 - 0.8 is 0.2)
+            if(Random.value > 0.70) //%30 percent chance (1 - 0.7 is 0.3)
             {
                 GameObject newHealthPotion = Instantiate(HealthPotionPrefab, (Vector2)transform.position, transform.rotation);
             }

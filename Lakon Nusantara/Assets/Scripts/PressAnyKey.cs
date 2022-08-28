@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PressAnyKey : MonoBehaviour
-{    
+{   
+    public FadeTransition fadeTransition; 
+
     void Update()
     {
         if(Input.anyKeyDown)
         {
-            SceneManager.LoadScene("MainMenu");
+            fadeTransition.GoFadeScene01();
             AudioManager audioManager = FindObjectOfType<AudioManager>();
             AudioManager.instance.PlaySFX(audioManager.hitButtonSFX);
         }
